@@ -31,6 +31,7 @@ RUN dnf install -y \
     texlive-microtype \
     texlive-everysel \
     texlive-lastpage \
+    texlive-pdflscape \
     && dnf clean all \
     && rm -rf /var/cache/dnf \
     && kpsewhich fontspec.sty >/dev/null \
@@ -40,7 +41,8 @@ RUN dnf install -y \
     && kpsewhich tikz.sty >/dev/null \
     && kpsewhich microtype.sty >/dev/null \
     && kpsewhich everysel.sty >/dev/null \
-    && kpsewhich lastpage.sty >/dev/null
+    && kpsewhich lastpage.sty >/dev/null \
+    && kpsewhich pdflscape.sty >/dev/null
 
 # tabularray 2021Q from GitHub (not in AL2023 repos; latest CTAN requires LaTeX 2022+)
 # Pinned to commit SHA with SHA-256 verification to prevent supply-chain tampering.
