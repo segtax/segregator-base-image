@@ -10,7 +10,6 @@ RUN dnf install -y \
     --setopt=metadata_expire=86400 \
     --setopt=fastestmirror=true \
     --setopt=max_parallel_downloads=10 \
-    curl \
     findutils \
     tar \
     texlive-scheme-basic \
