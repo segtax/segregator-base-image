@@ -1,10 +1,13 @@
-FROM amazoncorretto:21.0.8-al2023
+FROM amazoncorretto:25.0.4-al2023
 
 LABEL org.opencontainers.image.title="segregator-base-image" \
-      org.opencontainers.image.description="Shared base for CI and production: Corretto 21 + LaTeX + Typst" \
+      org.opencontainers.image.description="Shared base for CI and production: Corretto 25 + LaTeX + Typst" \
       org.opencontainers.image.source="https://github.com/segtax/segregator-base-image"
 
 ARG TYPST_VERSION=0.15.1
+
+RUN java -XshowSettings:properties -version 2>&1 \
+    | grep -q "java.specification.version = 25"
 
 RUN dnf install -y \
     --setopt=metadata_expire=86400 \
