@@ -14,6 +14,8 @@ RUN dnf install -y \
     --setopt=fastestmirror=true \
     --setopt=max_parallel_downloads=10 \
     findutils \
+    git \
+    gzip \
     tar \
     texlive-scheme-basic \
     texlive-tools \
@@ -41,6 +43,9 @@ RUN dnf install -y \
     xz \
     && dnf clean all \
     && rm -rf /var/cache/dnf \
+    && command -v git >/dev/null \
+    && command -v gzip >/dev/null \
+    && command -v tar >/dev/null \
     && kpsewhich fontspec.sty >/dev/null \
     && kpsewhich tcolorbox.sty >/dev/null \
     && kpsewhich extarticle.cls >/dev/null \
